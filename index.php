@@ -43,9 +43,9 @@
 
             function editInputFormat($number)
             {
-                $pattern = ["~[ ][(](.+)[)][ ]~", "~[ ]~"];
-                $replace = ["($1)", "-"];
-                $number = preg_replace($pattern, $replace, $number);
+                $search = [' (', ') ', '(', ')', ' '];
+                $replace = '-';
+                $number = str_replace($search, $replace, $number);
                 return $number;
             }
 
@@ -55,8 +55,8 @@
                 $searchingNumber = editInputFormat($searchingNumber);
 
                 foreach ($arr as $elem) {
-                    $maskPattern = preg_replace("~([^#+])~", "[$1]", substr($elem['mask'], 1));
-                    $maskPattern = '~' . str_replace("#", "\d", $maskPattern) . '~';
+                    $maskPattern = preg_replace("~([^#])~", "[$1]", substr($elem['mask'], 1));
+                    $maskPattern = '~' . str_replace(["(", ")", "#"], ["-", "-", "\d"], $maskPattern) . '~';
                     if (preg_match($maskPattern, $searchingNumber)) {
                         echo $elem['name_ru'];
                         break;
