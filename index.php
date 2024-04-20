@@ -39,14 +39,22 @@
             $source = 'https://cdn.jsdelivr.net/gh/andr-04/inputmask-multi@master/data/phone-codes.json';
 
             $source_json = file_get_contents($source);
-
             $arr = json_decode($source_json, true);
-            foreach ($arr as $elem) {
-                echo $elem['mask'], $elem['name_ru'];
+
+
+
+            function editInputFormat($number)
+            {
+                $pattern = ["~[ ][(](.+)[)][ ]~", "~[ ]~"];
+                $replace = ["($1)", "-"];
+                $number = preg_replace($pattern, $replace, $number);
+                return $number;
             }
 
             if ($_POST) {
+
                 $searchingNumber = $_POST['phone_number'];
+                $searchingNumber = editInputFormat($searchingNumber);
 
                 echo $searchingNumber;
             } ?>
