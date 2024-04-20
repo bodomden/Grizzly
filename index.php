@@ -41,8 +41,6 @@
             $source_json = file_get_contents($source);
             $arr = json_decode($source_json, true);
 
-
-
             function editInputFormat($number)
             {
                 $pattern = ["~[ ][(](.+)[)][ ]~", "~[ ]~"];
@@ -56,7 +54,14 @@
                 $searchingNumber = $_POST['phone_number'];
                 $searchingNumber = editInputFormat($searchingNumber);
 
-                echo $searchingNumber;
+                foreach ($arr as $elem) {
+                    $maskPattern = preg_replace("~([^#+])~", "[$1]", substr($elem['mask'], 1));
+                    $maskPattern = '~' . str_replace("#", "\d", $maskPattern) . '~';
+                    if (preg_match($maskPattern, $searchingNumber)) {
+                        echo $elem['name_ru'];
+                        break;
+                    }
+                }
             } ?>
 
 
