@@ -1,4 +1,9 @@
 $(document).ready(function() {
-    const modal = new bootstrap.Modal('#cookies');
-    modal.show();
+    if ($.cookie('phone') == null) {
+        $('#cookies').modal('show');
+        $('.btn-cookie').on('click', function(){
+            $.cookie('phone', 'true', { expires: 1});
+        });        
+    }    
 });
+

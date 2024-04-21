@@ -25,7 +25,7 @@
                             <div class="mb-3">
                                 <label for="phone_number" class="form-label">Phone Number:</label>
                                 <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="Phone number" maxlength="45"" required>
-                            </div>
+                            </div>                            
                             <div class=" mb-3">
                                 <button type="submit" class="btn btn-secondary">Find</button>
                             </div>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="modal" id="cookies" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog" id="dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Внимание!</h5>
@@ -49,13 +49,14 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                    <button type="button" class="btn btn-primary">Понятно</button>
+                    <button type="button" class="btn btn-primary btn-cookie" data-bs-dismiss="modal">Понятно</button>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/assets/js/jquery.cookie.js"></script>
     <script src="/assets/js/main.js"></script>
 </body>
 
