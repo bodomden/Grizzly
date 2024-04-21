@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="content mt-3">
+    <div class="content mt-3 ms-1">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 border ps-2">
@@ -33,10 +33,22 @@
                     </form>
                 </div>
             </div>
-            <?php echo $result; ?>
+            <div class="result">
+                <?php if (isset($result)) echo $result; ?>
+            </div>
         </div>
     </div>
-
+    <div class="container-fluid banner ms-1 pt-3">
+        <div class="row">
+            <img class="banner-mobile" src="/assets/image/banner_bgr_mobile_main.png">
+        </div>
+        <div class="row banner-background">
+            <div class="container">
+                <p class="p-banner">Wysyłamy paczki pod klucz już od 4,5 zł.</p>
+                <button class="btn btn-bd-banner mt-3">Uzyskaj konsultację teraz</button>
+            </div>
+        </div>
+    </div>
     <div class="modal" id="cookies" tabindex="-1">
         <div class="modal-dialog" id="dialog">
             <div class="modal-content">

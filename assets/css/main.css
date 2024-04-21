@@ -1,73 +1,65 @@
-:root {
-    --bg-color:#f5f5f5;
-    --text-color:#6c757d;
-    --accent-color:#ffd333;
-    --contrast-color:#3d464d;
-}
-
-html, body {
-    height: 100%;
-}
-
 body {
     min-width: 320px;
     font-family: Roboto, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
 }
 
-.container-fluid {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-a {
-    display: inline-block;
-    color: var(--text-color);
-    text-decoration: underline;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.header-logo {
-    text-decoration: none;
-    color: var(--accent-color);
-    transition: all .3s;
-}
-
-.header-logo:hover {
-    color: var(--contrast-color);
-}
-
-.breadcrumb {
-    color: var(--contrast-color)
-}
-
-img.hover-shadow {
-    transition: 0.3s;
-    object-fit: contain;
-    max-height: 160px;
-    height: 160px;
+.btn-bd-banner {
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: #78599C;
+    --bs-btn-border-color: #78599C;
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #7d629c;
+    --bs-btn-hover-border-color: #7d629c;
+    --bs-btn-active-color: var(--bs-white);
+    --bs-btn-active-bg: #a37ad2;
+    --bs-btn-active-border-color: #a37ad2;
+    --bs-btn-border-radius: 4px;
+    --bs-btn-padding-y: 16px;
   }
 
-.hover-shadow:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
-ul.info-icons {
-    list-style: none;    
-
+.p-banner {
+    font-size: 2.8vw;
+    font-weight: bold;
+    color: #FFFFFF;
 }
 
-@media (min-width: 1240px)  {
+.banner-background {
+    background-image: url("/assets/image/banner_bgr.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding: 13vw 0 9.5vw 3rem;
+}
+
+.banner-mobile {
+    display: none;
+}
+
+@media (min-width: 992px)  {
     #dialog {
         margin-right: unset;
+    }
+}
+
+@media (max-width: 1440px)  {
+    .banner-background {        
+        padding: 13vw 0 6.5vw 3rem;
+    }
+}
+
+@media (max-width: 991px)  {
+    .banner-background {     
+        background-image: url("/assets/image/banner_bgr_mobile.png"); 
+        background-size: cover;
+        padding-top: 8vw;
+    }
+
+    .banner-mobile {
+        display: block;
+        padding: 0 0 0 0;
+    }
+
+    .p-banner {
+        font-size: 20px;
+        max-width: 200px;
     }
 }
