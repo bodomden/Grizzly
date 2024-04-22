@@ -14,8 +14,8 @@ if ($_POST) {
         $mask = explode('-', $mask);
         if (count($inputNumber) == count($mask)) {
             if (compareNumbers($inputNumber, $mask)) {
-                $result = $elem['name_ru'];
-                break;
+                echo $elem['name_ru'];
+                exit;
             }
         } else {
             continue;

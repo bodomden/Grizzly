@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php include "./assets/code.php" ?>
 <html>
 
 <head>
@@ -20,7 +19,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 border ps-2">
-                    <form method="post" name="form">
+                    <form id="phoneform" method="post" name="form">
                         <div class="form-group mb-3">
                             <div class="mb-3">
                                 <label for="phone_number" class="form-label">Phone Number:</label>
@@ -33,12 +32,12 @@
                     </form>
                 </div>
             </div>
-            <div class="result">
-                <?php if (isset($result)) echo $result; ?>
+            <div class="row">
+                <p>Страна: <span id="result"></span></p>
             </div>
         </div>
     </div>
-    <div class="container-fluid banner ms-1 pt-3">
+    <div class=" container-fluid banner pt-3">
         <div class="row">
             <img class="banner-mobile" src="/assets/image/banner_bgr_mobile_main.png">
         </div>

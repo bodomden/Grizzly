@@ -7,3 +7,10 @@ $(document).ready(function() {
     }    
 });
 
+$("#phoneform").submit(function(event) {
+
+    event.preventDefault();
+    $.post("/assets/code.php", {
+        phone_number: $('#phone_number').val()
+    }, function(data) {$("#result").text(data)});
+});
